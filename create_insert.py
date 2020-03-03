@@ -12,8 +12,8 @@ class CreateInsert:
         self.cursor = self.db.cursor()
 
     def check_table(self, name):
-        self.cursor.execute("use docker")
-        self.cursor.execute("show tables")
+        self.cursor.execute("use datamodel")
+        self.cursor.execute("show datamodel")
         table = self.cursor.fetchall()
         for tables in table:
             if name in tables:
