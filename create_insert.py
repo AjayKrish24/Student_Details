@@ -4,7 +4,6 @@ import devconfig
 
 
 
-
 class CreateInsert:
 
     def __init__(self):
@@ -12,6 +11,7 @@ class CreateInsert:
         self.cursor = self.db.cursor()
 
     def check_table(self, name):
+<<<<<<< HEAD
         self.cursor.execute("use datamodel")
         self.cursor.execute("show datamodel")
         table = self.cursor.fetchall()
