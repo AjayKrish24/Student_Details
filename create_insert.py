@@ -4,7 +4,6 @@ import devconfig
 
 
 
-
 class CreateInsert:
 
     def __init__(self):
@@ -12,7 +11,7 @@ class CreateInsert:
         self.cursor = self.db.cursor()
 
     def check_table(self, name):
-        self.cursor.execute("use docker")
+        self.cursor.execute("show docker")
         self.cursor.execute("show tables")
         table = self.cursor.fetchall()
         for tables in table:
