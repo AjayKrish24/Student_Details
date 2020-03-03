@@ -2,4 +2,4 @@
 host = localhost
 user = root
 password = root
-db = datamodel
+db = docker

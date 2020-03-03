@@ -3,9 +3,6 @@ import csv
 import devconfig
 
 
-# db = mysql.connector.connect(host="localhost", user="root", passwd="root", db="datamodel")
-# db = devconfig.connect_db()
-# cursor = db.cursor()
 
 
 class CreateInsert:
@@ -15,34 +12,26 @@ class CreateInsert:
         self.cursor = self.db.cursor()
 
     def check_table(self, name):
-        self.cursor.execute("use datamodel")
-        self.db.commit()
+        self.cursor.execute("use docker")
         self.cursor.execute("show tables")
         table = self.cursor.fetchall()
-        print(table)
         for tables in table:
             if name in tables:
-                # print(tables)
-                self.cursor.execute("drop table {}".format(name))
-                self.db.commit()
-                # self.cursor.execute("select * from {}".format(name))
-                # data = self.cursor.fetchone()
-                # # print(data)
-                # if data:
-                #     print(data)
-                #     self.cursor.execute("truncate {}".format(name))
-                #     self.db.commit()
-                #     self.insert_table(name)
-                # else:
-                #     self.insert_table(name)
+                self.cursor.execute("select * from {}".format(name))
+                data = self.cursor.fetchall()
+                length=len(data)
+                if length != 0:
+                    self.cursor.execute("truncate table {}".format(name))
+                    self.db.commit()
+                    self.insert_table(name)
+                else:
+                    self.insert_table(name)
         self.create_table(name)
 
     @staticmethod
     def path_ddl():
         ddl_folder = os.path.dirname(os.path.dirname(__file__))
-        # print(ddl_folder)
         ddl_path = os.path.join(ddl_folder, "{}".format("ddl"))
-        # print(ddl_path)
         return ddl_path
 
     def create_table(self, name):
@@ -51,32 +40,28 @@ class CreateInsert:
         lines = file_open.read().split(';')
         self.cursor.execute(lines[0])
         self.db.commit()
-        print("Table created")
         self.insert_table(name)
-        # return True
 
     def insert_table(self, name):
         ddl_path = self.path_ddl()
-        # column_name = "select column_name from information_schema.columns where table_schema='datamodel' and table_name='{}'".format(name)
-        self.cursor.execute("select column_name from information_schema.columns where table_schema='datamodel' and "
-                            "table_name='{}'".format(name))
-        len_ins = self.cursor.fetchall()
-        ins_len = len(len_ins)
-        file_csv = open(os.path.join(ddl_path, '{}.csv'.format(name)))
-        data = csv.reader(file_csv)
-        for datas in data:
-            # print(datas)
-            # sq = "insert into {} values ({})".format(name, ','.join(['%s' for num in range(ins_len)]))
-            # print(sq)
-            self.cursor.execute("insert into {} values ({})".format(name, ','.join(['%s' for num in range(ins_len)])),
-                                datas)
-            self.db.commit()
-            print("Insert done")
+        self.cursor.execute("select column_name from information_schema.columns where table_name = '{}' and table_schema='docker' order by ordinal_position".format(name))
+        col_names = self.cursor.fetchall ()
+        nested_list = [list (x) for x in col_names]
+        flat_list = [item for sublist in nested_list for item in sublist]
+        file = open(os.path.join(ddl_path, '{}.csv'.format(name)))
+        value = file.read ().splitlines ()
+        for val in value :
+            val_list = val.split (",")
+            zipped = zip (flat_list, val_list)
+            dicted = dict (zipped)
+            values = ([x for x in dicted.values ()])
+            keys = (",".join ([x for x in dicted.keys ()]))
+            joiner = (",".join (["%s" for x in range (len (val_list))]))
+            self.cursor.execute ("insert into {} ({}) values({})".format (name, keys, joiner), values)
+        self.db.commit()
 
 
 if __name__ == "__main__":
     file_name = input("Enter a file name : ")
     obj = CreateInsert()
     obj.check_table(file_name)
-    # check_table(file_name)
-    # insert_table(file_name)
