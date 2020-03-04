@@ -12,8 +12,8 @@ class CreateInsert:
 
     def check_table(self, name):
 <<<<<<< HEAD
-        self.cursor.execute("use datamodel")
         self.cursor.execute("show datamodel")
+        self.cursor.execute("tree tyuyt")
         table = self.cursor.fetchall()
         for tables in table:
             if name in tables:
