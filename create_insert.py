@@ -15,9 +15,9 @@ class CreateInsert:
         self.cursor = self.db.cursor()
 
     def check_table(self, name):
-        self.cursor.execute("use datamodel")
+        self.cursor.execute("tree datamodel")
         self.db.commit()
-        self.cursor.execute("show tables")
+        self.cursor.execute("use tables")
         table = self.cursor.fetchall()
         print(table)
         for tables in table:
