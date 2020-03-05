@@ -1,0 +1,12 @@
+2020-03-05 12:47:32,002 — student — INFO — check_table:22 — Tables are fetched from database
+2020-03-05 12:47:32,002 — student — INFO — path_ddl:48 — Path of the ddl folder is fetched : C:\Users\ajay.krishnamurthi\PycharmProjects\DataModel\src\main\ddl
+2020-03-05 12:47:33,027 — student — INFO — create_table:69 — Table student is created 
+2020-03-05 12:47:33,028 — student — INFO — path_ddl:48 — Path of the ddl folder is fetched : C:\Users\ajay.krishnamurthi\PycharmProjects\DataModel\src\main\ddl
+2020-03-05 12:47:33,525 — student — INFO — insert_table:105 — Data's are inserted into table student
+2020-03-05 12:48:46,376 — student — INFO — check_table:22 — Tables are fetched from database
+2020-03-05 12:48:46,377 — student — INFO — path_ddl:48 — Path of the ddl folder is fetched : C:\Users\ajay.krishnamurthi\PycharmProjects\DataModel\src\main\ddl
+2020-03-05 12:48:46,880 — student — INFO — create_table:69 — Table student is created 
+2020-03-05 12:48:46,880 — student — INFO — path_ddl:48 — Path of the ddl folder is fetched : C:\Users\ajay.krishnamurthi\PycharmProjects\DataModel\src\main\ddl
+2020-03-05 12:48:47,161 — student — INFO — insert_table:105 — Data's are inserted into table student
+2020-03-05 14:36:39,135 — student — INFO — check_table:22 — Tables are fetched from database
+2020-03-05 17:41:35,568 — student — INFO — check_table:22 — Tables are fetched from database

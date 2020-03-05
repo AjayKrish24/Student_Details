@@ -1,0 +1,12 @@
+2020-03-05 12:47:33,578 — city — INFO — check_table:22 — Tables are fetched from database
+2020-03-05 12:47:33,578 — city — INFO — path_ddl:48 — Path of the ddl folder is fetched : C:\Users\ajay.krishnamurthi\PycharmProjects\DataModel\src\main\ddl
+2020-03-05 12:47:34,309 — city — INFO — create_table:69 — Table city is created 
+2020-03-05 12:47:34,309 — city — INFO — path_ddl:48 — Path of the ddl folder is fetched : C:\Users\ajay.krishnamurthi\PycharmProjects\DataModel\src\main\ddl
+2020-03-05 12:47:34,429 — city — INFO — insert_table:105 — Data's are inserted into table city
+2020-03-05 12:48:47,174 — city — INFO — check_table:22 — Tables are fetched from database
+2020-03-05 12:48:47,220 — city — INFO — path_ddl:48 — Path of the ddl folder is fetched : C:\Users\ajay.krishnamurthi\PycharmProjects\DataModel\src\main\ddl
+2020-03-05 12:48:47,946 — city — INFO — create_table:69 — Table city is created 
+2020-03-05 12:48:47,947 — city — INFO — path_ddl:48 — Path of the ddl folder is fetched : C:\Users\ajay.krishnamurthi\PycharmProjects\DataModel\src\main\ddl
+2020-03-05 12:48:48,034 — city — INFO — insert_table:105 — Data's are inserted into table city
+2020-03-05 14:36:39,139 — city — INFO — check_table:22 — Tables are fetched from database
+2020-03-05 17:41:35,597 — city — INFO — check_table:22 — Tables are fetched from database

@@ -1,0 +1,15 @@
+2020-03-05 12:47:31,981 — __main__ — INFO — connection:22 — Database Connection Established root@localhost with password ****
+2020-03-05 12:47:31,981 — __main__ — INFO — creation:30 — Object Created
+2020-03-05 12:47:39,225 — __main__ — INFO — operation:39 — Instance created for Dml operation
+2020-03-05 12:48:46,369 — __main__ — INFO — connection:22 — Database Connection Established root@localhost with password ****
+2020-03-05 12:48:46,369 — __main__ — INFO — creation:30 — Object Created
+2020-03-05 12:48:53,001 — __main__ — INFO — operation:39 — Instance created for Dml operation
+2020-03-05 12:49:00,420 — __main__ — INFO — close:48 — Program ended And connection closed
+2020-03-05 14:36:39,107 — __main__ — INFO — connection:22 — Database Connection Established root@localhost with password ****
+2020-03-05 14:36:39,107 — __main__ — INFO — creation:30 — Object Created
+2020-03-05 14:36:39,167 — __main__ — INFO — operation:39 — Instance created for Dml operation
+2020-03-05 14:37:40,326 — __main__ — INFO — close:48 — Program ended And connection closed
+2020-03-05 17:41:35,219 — __main__ — INFO — connection:22 — Database Connection Established root@localhost with password ****
+2020-03-05 17:41:35,369 — __main__ — INFO — creation:30 — Object Created
+2020-03-05 17:41:35,850 — __main__ — INFO — operation:39 — Instance created for Dml operation
+2020-03-05 17:41:50,162 — __main__ — INFO — close:48 — Program ended And connection closed
